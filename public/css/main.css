@@ -1,0 +1,317 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+:root {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    color: #444444;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--bs-primary);
+}
+
+a:hover,
+a:focus {
+    text-decoration: none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+textarea {
+    resize: none;
+}
+
+hr {
+    margin: 10px 0px;
+    color: darkgray;
+}
+
+::-moz-selection {
+    color: #ffffff;
+    background: var(--bs-primary);
+}
+
+::selection {
+    color: #ffffff;
+    background: var(--bs-primary);
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 8px;
+    background-color: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #aab7cf;
+}
+
+/*--------------------------------------------------------------
+# Loader
+--------------------------------------------------------------*/
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    overflow: hidden;
+    background: #fff;
+}
+
+#loader:before {
+    content: "";
+    position: fixed;
+    top: calc(50% - 0px);
+    left: calc(50% - 30px);
+    border: 6px solid #f3f3f3;
+    border-top-color: var(--bs-primary);
+    border-bottom-color: var(--bs-primary);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: animate-loader 1s linear infinite;
+}
+
+@keyframes animate-loader {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/*--------------------------------------------------------------
+# Override some default Bootstrap stylings
+--------------------------------------------------------------*/
+*:focus {
+    box-shadow: none !important;
+    outline: 0px !important;
+}
+
+.navbar {
+    box-shadow: 0px 3px 7px -6px rgba(0, 0, 0, 0.5);
+}
+
+.form-control,
+.form-select {
+    border-radius: 4px;
+    border: 1px solid #ced4da;
+}
+
+.form-control:focus,
+.form-select:focus {
+    background-color: #fff;
+    border: 1.8px solid var(--bs-primary);
+    outline: 0;
+    box-shadow: 0 0 0.25rem 0.05rem rgba(105, 108, 255, 0.1);
+}
+
+.dropdown-menu {
+    border-radius: 4px;
+    padding: 10px 0;
+    -webkit-animation-name: dropdown-animate;
+    animation-name: dropdown-animate;
+    -webkit-animation-duration: 0.2s;
+    animation-duration: 0.2s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    border: 0;
+    box-shadow: 0 5px 30px 0 rgba(82, 63, 105, 0.2);
+}
+
+.dropdown-menu .dropdown-header,
+.dropdown-menu .dropdown-footer {
+    text-align: center;
+    font-size: 15px;
+    padding: 10px 25px;
+}
+
+.dropdown-menu .dropdown-footer a {
+    color: #444444;
+    text-decoration: underline;
+}
+
+.dropdown-menu .dropdown-footer a:hover {
+    text-decoration: none;
+}
+
+.dropdown-menu .dropdown-divider {
+    color: #a5c5fe;
+    margin: 0;
+}
+
+.dropdown-menu .dropdown-item {
+    font-size: 14px;
+    padding: 10px 15px;
+    transition: 0.3s;
+}
+
+.dropdown-menu .dropdown-item .icon {
+    margin-right: 10px;
+    font-size: 18px;
+    line-height: 0;
+}
+
+.dropdown-menu .dropdown-item:hover {
+    background-color: #f6f9ff;
+}
+
+@media (min-width: 768px) {
+    .dropdown-menu-arrow::before {
+        content: "";
+        width: 13px;
+        height: 13px;
+        background: #fff;
+        position: absolute;
+        top: -7px;
+        right: 20px;
+        transform: rotate(45deg);
+        border-top: 1px solid #eaedf1;
+        border-left: 1px solid #eaedf1;
+    }
+}
+
+@-webkit-keyframes dropdown-animate {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+
+    0% {
+        opacity: 0;
+    }
+}
+
+@keyframes dropdown-animate {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+
+    0% {
+        opacity: 0;
+    }
+}
+
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary:visited {
+    background: var(--bs-primary) !important;
+    border-color: var(--bs-primary) !important;
+    color: white;
+}
+
+.btn:focus-visible {
+    box-shadow: none !important;
+}
+
+table {
+    font-size: 14px;
+}
+
+table th {
+    font-weight: normal;
+}
+
+table thead tr {
+    border: 0px solid #e5e7eb;
+}
+
+table thead tr th {
+    background: hsla(220, 9%, 46%, 0.05) !important;
+}
+
+.active > .page-link,
+.page-link.active {
+    background: var(--bs-primary);
+    border-color: var(--bs-primary);
+}
+
+.pagination {
+    --bs-pagination-color: var(--bs-primary);
+}
+
+form {
+    font-size: 14px;
+}
+
+form label {
+    color: gray;
+}
+
+/*--------------------------------------------------------------
+# Main & Sections
+--------------------------------------------------------------*/
+#main {
+    margin-top: 30px;
+}
+
+section {
+    padding: 30px 0px;
+}
+
+/*--------------------------------------------------------------
+# Custom
+--------------------------------------------------------------*/
+.custom-nav-item {
+    background: #e1e6eb;
+    border-radius: 4px;
+    padding: 2px 10px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.item-name {
+    display: inline-block;
+    width: 95%;
+    white-space: nowrap;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+}
+
+/*--------------------------------------------------------------
+# By Item Section
+--------------------------------------------------------------*/
+#by-item .badge {
+    border: none;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+#by-item .custom-badge-instock {
+    background: #80c580;
+}
+
+#by-item .custom-badge-fewstock {
+    background: #c3c150;
+}
+
+#by-item .custom-badge-outstock {
+    background: #e16c6c;
+}
