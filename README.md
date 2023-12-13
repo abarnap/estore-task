@@ -35,6 +35,17 @@ cp .env.example .env
 ```
 
 > Important: Configure your database & mail details in .env file.
+> Turn on Less secure app access
+```
+MAIL_MAILER=smtp
+MAIL_HOST=smtp.googlemail.com
+MAIL_PORT=465
+MAIL_USERNAME="hello@example.com"
+MAIL_PASSWORD=null
+MAIL_ENCRYPTION=ssl
+MAIL_FROM_ADDRESS="hello@example.com"
+MAIL_FROM_NAME="${APP_NAME}"
+```
 
 ##### Install the composer's needed packages.
 
